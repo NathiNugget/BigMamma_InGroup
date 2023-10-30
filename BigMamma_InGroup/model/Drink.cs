@@ -5,6 +5,7 @@
         private bool _containsAlcohol;
         private bool _isVegan;
         private bool _containssugar;
+        
         public Drink(string name, int price, bool containsAlcohol, bool isVegan, bool containsSugar) : base(name, price)
         {
              _containsAlcohol = containsAlcohol;
