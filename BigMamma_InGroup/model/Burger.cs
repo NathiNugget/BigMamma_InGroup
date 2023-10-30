@@ -1,6 +1,6 @@
 namespace BigMamma_InGroup.model;
 
-public class Burger
+public class Burger : MenuItem
 {
     
 }
