@@ -19,7 +19,8 @@ namespace BigMamma_InGroup.services
 
         public List<Pizza> PizzaList 
         { 
-            get { return _pizzaList; } 
+            get => _pizzaList;
+            
         }
 
 
