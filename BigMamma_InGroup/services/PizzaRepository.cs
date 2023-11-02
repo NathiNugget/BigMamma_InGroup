@@ -13,13 +13,15 @@ namespace BigMamma_InGroup.services
             if (test)
             {
                 _pizzaList = new List<Pizza>();
-                _pizzaList.Add(new Pizza("Magherita", 90, false, true, false, false));
+                PizzaList.Add(new Pizza("Magherita", 90, false, true, false, false));
+                PizzaList.Add(new Pizza("Cheap Pizza", 50, false, true, false, false));
+
             }
         }
 
         public List<Pizza> PizzaList 
         { 
-            get => _pizzaList;
+            get {  return _pizzaList; }
             
         }
 

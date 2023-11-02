@@ -1,7 +1,12 @@
+using BigMamma_InGroup.Pages.Menu;
+using BigMamma_InGroup.services;
+
 namespace BigMamma_InGroup.model;
 
 public class Pizza : MenuItem
+
 {
+
     private bool _isVegan;
     private bool _isDeeppan;
     private bool _isClassic;
@@ -19,5 +24,6 @@ public class Pizza : MenuItem
     public bool isDeeppan { get { return _isDeeppan; } set { _isDeeppan = value; } }
     public bool isClassic { get { return _isClassic; } set { _isClassic = value; } }
     public bool isFamilySize { get { return _isFamilySize; } set { _isFamilySize = value; } }
+    
     
 }
