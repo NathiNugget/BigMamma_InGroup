@@ -18,7 +18,7 @@ namespace BigMamma_InGroup.Pages.Menu
 
         public void OnGet()
         {
-            Drinks = _repo.
+            Drinks = _repo.DrinkList;
         }
     }
 }

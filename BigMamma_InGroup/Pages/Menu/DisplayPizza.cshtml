@@ -1,28 +1,38 @@
 ﻿@page
 @using BigMamma_InGroup.model; 
+@using BigMamma_InGroup.Pages;
 @model BigMamma_InGroup.Pages.Menu.DisplayPizzaModel
 @{
     <h1 class=""> Vis alle pizzaer </h1>
+    <script>
 
-    <table class="table-hover">
-        <thead>
-            <tr>
-                <th> Name</th>
-                <th> Price </th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Pizza p in Model.PizzaList)
-            {
-                <tr>
-                    <td>@p.Name </td>
-                    <td>@p.Price </td>
-                    
-                </tr>
 
             }
-        </tbody>
+            
+    </script>
+    <audio id="myAudio">
+        <source src="https://www.myinstants.com/media/sounds/yeet-sound-effect.mp3"> 
+    </audio>
+    <table class="table-hover" onclick="print()">
+                    <thead>
+                        <tr>
+                            <th> Name</th>
+                            <th> Price </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Pizza p in Model.PizzaList)
+            {
+                            <tr>
+                                <td>@p.Name </td>
+                                <td>@p.Price </td>
+                                
+                            </tr>
+
+            }
+                    </tbody>
 
     </table>
+    
 }
