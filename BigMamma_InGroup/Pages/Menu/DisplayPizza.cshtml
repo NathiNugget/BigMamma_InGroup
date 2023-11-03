@@ -6,8 +6,11 @@
     <h1 class=""> Vis alle pizzaer </h1>
     <script>
 
-
-            }
+        
+        function print(){
+            var x = document.getElementById("myAudio"); 
+            x.play(); 
+        }
             
     </script>
     <audio id="myAudio">
@@ -16,15 +19,18 @@
     <table class="table-hover" onclick="print()">
                     <thead>
                         <tr>
-                            <th> Name</th>
+                            <th>Number/ID </th>
+                            <th> Name </th>
                             <th> Price </th>
 
                         </tr>
                     </thead>
                     <tbody>
+                        
                         @foreach (Pizza p in Model.PizzaList)
-            {
+            {           
                             <tr>
+                                <td>@{int i = 1 + @Model.PizzaList.IndexOf(p);}@i</td>
                                 <td>@p.Name </td>
                                 <td>@p.Price </td>
                                 
