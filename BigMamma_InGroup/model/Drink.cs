@@ -2,20 +2,20 @@
 {
     public class Drink : MenuItem
     {
-        private bool _containsAlcohol;
+        private bool _isAlcoholic;
         private bool _isVegan;
-        private bool _containssugar;
+        private bool _isSugar;
         
-        public Drink(string name, int price, bool containsAlcohol, bool isVegan, bool containsSugar) : base(name, price)
+        public Drink(string name, int price, bool isAlcoholic, bool isVegan, bool isSugar) : base(name, price)
         {
-             _containsAlcohol = containsAlcohol;
+             _isAlcoholic = isAlcoholic;
             _isVegan = isVegan;
-            _containssugar = containsSugar;
+            _isSugar = isSugar;
         }
 
-        public bool ContainsAlcohol { get { return _containsAlcohol; } set { _containsAlcohol = value; } }
+        public bool ContainsAlcohol { get { return _isAlcoholic; } set { _isAlcoholic = value; } }
         public bool IsVegan { get { return _isVegan;} set { _isVegan = value;} }
-        public bool ContainsSugar { get { return _containssugar; } set { _containssugar = value; } }
+        public bool ContainsSugar { get { return _isSugar; } set { _isSugar = value; } }
 
 
 

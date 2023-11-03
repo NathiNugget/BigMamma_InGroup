@@ -1,0 +1,18 @@
+﻿@page
+@model BigMamma_InGroup.Pages.Menu.AddNewPizzaModel
+@{
+}
+
+<h1> Add new pizza </h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>Pizza Name</label><br />
+        <input class="form-control" asp-for="@Model.NewName" /><br />
+        <label>Pizza Price</label><br />
+        <input class="form-control" asp-for="@Model.NewPrice" /><br />
+        <br />
+
+        <input type="submit" value="Add new Pizza" />
+    </div>
+</form> 
