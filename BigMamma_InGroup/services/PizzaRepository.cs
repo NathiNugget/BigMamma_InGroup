@@ -25,11 +25,22 @@ namespace BigMamma_InGroup.services
             }
         }
 
+        public Pizza GetByName(string name)
+        {
+            foreach (var p in PizzaList)
+            {
+                if (p.Name == name) return p;
+            }
+            return new Pizza("", 0, false, false, false, false); 
+        }
+
         public List<Pizza> PizzaList 
         { 
             get {  return _pizzaList; }
             
         }
+
+
 
 
     }
