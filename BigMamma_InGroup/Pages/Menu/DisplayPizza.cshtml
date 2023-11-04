@@ -14,30 +14,43 @@
             
     </script>
     <audio id="myAudio">
-        <source src="https://www.myinstants.com/media/sounds/yeet-sound-effect.mp3"> 
+        <source src="https://nathinugget.net/greetings.mp3">
     </audio>
     <table class="table-hover" onclick="print()">
-                    <thead>
-                        <tr>
-                            <th>Number/ID </th>
-                            <th> Name </th>
-                            <th> Price </th>
+        <thead>
+            <tr>
+                <th>Number/ID </th>
+                <th> Name </th>
+                <th> Price </th>
+                <th> Vegan </th>
+                <th> Family Size </th>
+                <th> Deeppan </th>
+                <th> Classic </th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
+            </tr>
+        </thead>
+        <tbody>
                         
-                        @foreach (Pizza p in Model.PizzaList)
-            {           
-                            <tr>
-                                <td>@{int i = 1 + @Model.PizzaList.IndexOf(p);}@i</td>
-                                <td>@p.Name </td>
-                                <td>@p.Price </td>
-                                
-                            </tr>
+            @foreach (Pizza p in Model.PizzaList)
+    {           
+                <tr>
+                    <td>@{int i = 1 + @Model.PizzaList.IndexOf(p);}@i</td>
+                    <td>@p.Name</td>
+                    <td>@p.Price </td>
+                    <td>@Html.Raw((p.isVegan) ? "✅" : "❌")</td>
+                    <td>@Html.Raw((p.isFamilySize) ? "✅" : "❌")</td>
+                    <td>@Html.Raw((p.isDeeppan) ? "✅" : "❌")</td>
+                    <td>@Html.Raw((p.isClassic) ? "✅" : "❌")</td>
+                    <td><a asp-page="EditPizza" asp-route-name="@p.Name">Edit Pizza</a></td>
+                   
+                    
+                    
 
-            }
-                    </tbody>
+                                
+                </tr>
+
+    }
+        </tbody>
 
     </table>
     

@@ -26,7 +26,7 @@ namespace BigMamma_InGroup.Pages.Menu
 
         public IActionResult OnPost()
         {
-            Pizza p = new Pizza(NewName, NewPrice, false, false, false, false);
+            Pizza p = new Pizza(NewName, NewPrice, false, false, false);
             _pr.PizzaList.Add(p);
             return RedirectToPage("DisplayPizza");
 
