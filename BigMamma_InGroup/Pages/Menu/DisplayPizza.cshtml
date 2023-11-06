@@ -10,8 +10,10 @@
             <form method="get">
             <input type="submit" value="Logout here" asp-page="../Login/Logout">
             </form>
-            <h1 class=""> Vis alle pizzaer </h1>
-            <script>
+        <h1 class=""> Show all pizzas <h4 style="float: right; font-family: 'Comic Sans MS'">                                           Logged in as @{
+                string usr = UserRepository.CurrentUser;
+            }@usr</h4><br /></h1> 
+        <script>
 
 
                 function print() {
@@ -23,7 +25,7 @@
             <audio id="myAudio">
                 <source src="https://nathinugget.net/greetings.mp3">
             </audio>
-            <table class="table-hover" onload="print()">
+            <table class="table-hover" onclick="print()">
                 <thead>
                     <tr>
                         <th>Number/ID </th>
@@ -58,7 +60,9 @@
                                 <td><a asp-page="EditPizza" asp-route-name="@p.Name">Edit Pizza</a></td>
                                 <td><a asp-page="DeletePizza" asp-route-name="@p.Name">Delete Pizza</a></td>
                             }
+                            
                         }
+                        <td><a asp-page="PutInBasket" asp-route-name="@p.Name">Put in basket 🧺</a></td>
                             
 
 

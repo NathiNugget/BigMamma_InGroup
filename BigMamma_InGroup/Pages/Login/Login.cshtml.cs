@@ -32,6 +32,8 @@ namespace BigMamma_InGroup.Pages.Login
                 {
                     if (Username == "Admin") UserRepository.IsAdmin = true;
                     UserRepository.LoggedIn = true;
+                    UserRepository.CurrentUser = Username;
+                    UserRepository.Balance = 500.0; 
                     return RedirectToPage("../Menu/DisplayPizza");
                 }
             }

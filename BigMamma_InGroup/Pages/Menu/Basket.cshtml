@@ -1,0 +1,48 @@
+﻿@page
+
+@model BigMamma_InGroup.Pages.Menu.BasketModel
+@{
+    <h1>These items are in your basket. Do you want to order this?</h1>
+    
+    <table class="table-hover" onload="print()">
+                <thead>
+                    <tr>
+                        
+                        <th> Name </th>
+                        <th> Price </th> 
+
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach(model.Pizza p in Model.PizzaList)
+            {
+                <tr>
+                    
+                    <td>@p.Name</td>
+                    <td>
+                        @{
+                            double d = @p.Price * 0.95;
+                        }@d DKK
+                    </td>
+                    
+                   
+
+
+
+
+
+
+                </tr>
+    }
+                </tbody>
+    </table>
+
+    <form method="get">
+        <div class="form-group">
+            <input type="submit" value="Order" asp-page-handler="Order" class="btn btn-success"/>
+            <input type="submit" value="Cancel" asp-page-handler="Cancel" class="btn btn-danger" />
+        </div>
+    </form>
+
+    
+}
