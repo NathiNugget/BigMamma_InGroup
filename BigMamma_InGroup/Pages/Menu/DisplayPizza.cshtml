@@ -1,58 +1,131 @@
 ﻿@page
+@using BigMamma_InGroup.services;
 @using BigMamma_InGroup.model; 
 @using BigMamma_InGroup.Pages;
 @model BigMamma_InGroup.Pages.Menu.DisplayPizzaModel
 @{
-    <h1 class=""> Vis alle pizzaer </h1>
-    <script>
-
         
-        function print(){
-            var x = document.getElementById("myAudio"); 
-            x.play(); 
+        if (UserRepository.LoggedIn == true)
+        {
+            <form method="get">
+            <input type="submit" value="Logout here" asp-page="../Login/Logout">
+            </form>
+            <h1 class=""> Vis alle pizzaer </h1>
+            <script>
+
+
+                function print() {
+                    var x = document.getElementById("myAudio");
+                    x.play();
+                }
+
+            </script>
+            <audio id="myAudio">
+                <source src="https://nathinugget.net/greetings.mp3">
+            </audio>
+            <table class="table-hover" onload="print()">
+                <thead>
+                    <tr>
+                        <th>Number/ID </th>
+                        <th> Name </th>
+                        <th> Price </th>
+                        <th> Vegan </th>
+                        <th> Family Size </th>
+                        <th> Deeppan </th>
+                        <th> Classic </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Pizza p in Model.PizzaList)
+                    {
+                        <tr>
+                            <td>@{
+                                    int i = 1 + @Model.PizzaList.IndexOf(p);
+                                }@i</td>
+                            <td>@p.Name</td>
+                        <td>@{
+                                double d = @p.Price * 0.95;
+                            }@d </td>
+                        <td>@Html.Raw((p.isVegan) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isFamilySize) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isDeeppan) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isClassic) ? "✅" : "❌")</td>
+                        @{
+                            if (UserRepository.IsAdmin)
+                            {
+                                <td><a asp-page="EditPizza" asp-route-name="@p.Name">Edit Pizza</a></td>
+                                <td><a asp-page="DeletePizza" asp-route-name="@p.Name">Delete Pizza</a></td>
+                            }
+                        }
+                            
+
+
+
+
+
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
         }
-            
-    </script>
-    <audio id="myAudio">
-        <source src="https://nathinugget.net/greetings.mp3">
-    </audio>
-    <table class="table-hover" onload="print()">
-        <thead>
-            <tr>
-                <th>Number/ID </th>
-                <th> Name </th>
-                <th> Price </th>
-                <th> Vegan </th>
-                <th> Family Size </th>
-                <th> Deeppan </th>
-                <th> Classic </th>
+        else
+        {
+            <h1 class=""> Vis alle pizzaer </h1>
+            <script>
 
-            </tr>
-        </thead>
-        <tbody>
-                        
-            @foreach (Pizza p in Model.PizzaList)
-    {           
-                <tr>
-                    <td>@{int i = 1 + @Model.PizzaList.IndexOf(p);}@i</td>
-                    <td>@p.Name</td>
-                    <td>@p.Price </td>
-                    <td>@Html.Raw((p.isVegan) ? "✅" : "❌")</td>
-                    <td>@Html.Raw((p.isFamilySize) ? "✅" : "❌")</td>
-                    <td>@Html.Raw((p.isDeeppan) ? "✅" : "❌")</td>
-                    <td>@Html.Raw((p.isClassic) ? "✅" : "❌")</td>
-                    <td><a asp-page="EditPizza" asp-route-name="@p.Name">Edit Pizza</a></td>
-                    <td><a asp-page="DeletePizza" asp-route-name="@p.Name">Delete Pizza</a></td>
-                   
-                    
-                    
 
-                                
-                </tr>
+                function print() {
+                    var x = document.getElementById("myAudio");
+                    x.play();
+                }
 
-    }
-        </tbody>
+            </script>
+            <audio id="myAudio">
+                <source src="https://nathinugget.net/greetings.mp3">
+            </audio>
+            <table class="table-hover" onload="print()">
+                <thead>
+                    <tr>
+                        <th>Number/ID </th>
+                        <th> Name </th>
+                        <th> Price </th>
+                        <th> Vegan </th>
+                        <th> Family Size </th>
+                        <th> Deeppan </th>
+                        <th> Classic </th>
 
-    </table>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Pizza p in Model.PizzaList)
+                    {
+                        <tr>
+                            <td>@{
+                                    int i = 1 + @Model.PizzaList.IndexOf(p);
+                                }@i</td>
+                            <td>@p.Name</td>
+                            <td>@p.Price </td>
+                            <td>@Html.Raw((p.isVegan) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isFamilySize) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isDeeppan) ? "✅" : "❌")</td>
+                            <td>@Html.Raw((p.isClassic) ? "✅" : "❌")</td>
+
+
+
+
+
+                        </tr>
+
+                    }
+                </tbody>
+
+            </table>
+        }
+    
     
 }

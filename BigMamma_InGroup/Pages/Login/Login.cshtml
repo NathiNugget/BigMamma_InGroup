@@ -1,0 +1,15 @@
+﻿@page
+@model LoginModel
+@{
+    <form method="post">
+    <div class="form-group" >
+        <label>User Name</label><br />
+        <input class="form-control" asp-for="@Model.Username" /><br />
+        <label>Password</label><br />
+        <input class="form-control" asp-for="@Model.Password" /><br />
+        <br />
+
+        <input type="submit" value="Log In"/>
+    </div>
+    </form>
+}
