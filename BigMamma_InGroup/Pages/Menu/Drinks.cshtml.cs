@@ -14,11 +14,11 @@ namespace BigMamma_InGroup.Pages.Menu
             _repo = repository;
         }
 
-        public List<Drink> Drinks { get; set; }
+        public List<Drink> DrinkList { get; set; }
 
         public void OnGet()
         {
-            Drinks = _repo.DrinkList;
+            DrinkList = _repo.DrinkList;
         }
     }
 }
