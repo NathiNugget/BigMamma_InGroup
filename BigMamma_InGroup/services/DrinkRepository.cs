@@ -19,8 +19,37 @@ public class DrinkRepository
         }
     }
 
+    public Drink GetByName(string name)
+    {
+        foreach (Drink d in DrinkList)
+        {
+            if (d.Name == name)
+            {
+                Console.WriteLine("hej");
+                return d;
+            }
+        }
+
+        return new Drink("", 0, false, false, false);
+    }
+
     public List<Drink> DrinkList
     {
         get { return _drinkList; }
+        set { _drinkList = value; }
+    }
+
+    public int GetIndex(string name)
+    {
+        for (int i = 0; i < DrinkList.Count; i++)
+        {
+            if (DrinkList[i].Name == name)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
+    
