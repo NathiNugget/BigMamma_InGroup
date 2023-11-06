@@ -7,10 +7,11 @@
         static public bool IsAdmin { get; set; }
 
         public bool Admin { get; set; }
-        public UserRepository() {
+        public UserRepository()
+        {
             dict.Add("Admin", "Super");
             dict.Add("Anders", "Anders123");
-            dict.Add("Lone", "girlpower99"); 
+            dict.Add("Lone", "girlpower99");
         }
 
 

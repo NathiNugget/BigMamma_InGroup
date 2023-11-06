@@ -8,9 +8,9 @@ namespace BigMamma_InGroup.Pages.Login
     {
         public IActionResult OnGet()
         {
-            UserRepository.IsAdmin = false; 
+            UserRepository.IsAdmin = false;
             UserRepository.LoggedIn = false;
-            return RedirectToPage("/Index"); 
+            return RedirectToPage("/Index");
         }
     }
 }

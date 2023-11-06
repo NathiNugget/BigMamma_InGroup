@@ -10,4 +10,6 @@
     <None Include="wwwroot\lib\yeet.mp3" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
 </Project>

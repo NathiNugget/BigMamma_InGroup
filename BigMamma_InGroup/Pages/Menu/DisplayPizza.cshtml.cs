@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using BigMamma_InGroup.model;
 using BigMamma_InGroup.services;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BigMamma_InGroup.Pages.Menu
 {
@@ -9,7 +8,7 @@ namespace BigMamma_InGroup.Pages.Menu
     {
 
         // Instance of PizzaRepository
-        IPizzaRepository _pr; 
+        IPizzaRepository _pr;
 
         //DI
         public DisplayPizzaModel(IPizzaRepository pr)
@@ -20,7 +19,7 @@ namespace BigMamma_InGroup.Pages.Menu
         public List<Pizza> PizzaList { get; set; }
         public void OnGet()
         {
-            PizzaList = _pr.PizzaList; 
+            PizzaList = _pr.PizzaList;
         }
     }
 }

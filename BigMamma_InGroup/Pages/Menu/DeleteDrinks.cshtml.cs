@@ -8,7 +8,7 @@ public class DeleteDrinks : PageModel
 {
     [BindProperty]
     public string ToDeleteName { get; set; }
-    [BindProperty] 
+    [BindProperty]
     public int ToDeletePrice { get; set; }
 
     private DrinkRepository _dr;
@@ -17,13 +17,13 @@ public class DeleteDrinks : PageModel
     {
         _dr = dr;
     }
-    public static int index; 
+    public static int index;
     public void OnGet(string Name)
     {
         ToDeleteName = Name;
-        ToDeletePrice = _dr.GetByName(ToDeleteName).Price; 
+        ToDeletePrice = _dr.GetByName(ToDeleteName).Price;
         index = _dr.GetIndex(ToDeleteName);
-               
+
     }
 
     public IActionResult OnPostDelete()
@@ -32,10 +32,11 @@ public class DeleteDrinks : PageModel
         return RedirectToPage("Drinks");
     }
 
-    public IActionResult OnPostCancel(){
+    public IActionResult OnPostCancel()
+    {
         return RedirectToPage("Drinks");
     }
-        
+
 
 }
 

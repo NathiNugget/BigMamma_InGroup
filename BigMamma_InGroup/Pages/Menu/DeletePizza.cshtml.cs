@@ -1,7 +1,6 @@
 using BigMamma_InGroup.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.ComponentModel.DataAnnotations;
 
 namespace BigMamma_InGroup.Pages.Menu
 {
@@ -9,7 +8,7 @@ namespace BigMamma_InGroup.Pages.Menu
     {
         [BindProperty]
         public string ToDeleteName { get; set; }
-        [BindProperty] 
+        [BindProperty]
         public int ToDeletePrice { get; set; }
 
         private IPizzaRepository _pr;
@@ -18,13 +17,13 @@ namespace BigMamma_InGroup.Pages.Menu
         {
             _pr = pr;
         }
-        public static int index; 
+        public static int index;
         public void OnGet(string Name)
         {
             ToDeleteName = Name;
-            ToDeletePrice = _pr.GetByName(ToDeleteName).Price; 
+            ToDeletePrice = _pr.GetByName(ToDeleteName).Price;
             index = _pr.GetIndex(ToDeleteName);
-               
+
         }
 
         public IActionResult OnPostDelete()
@@ -33,10 +32,11 @@ namespace BigMamma_InGroup.Pages.Menu
             return RedirectToPage("DisplayPizza");
         }
 
-        public IActionResult OnPostCancel(){
+        public IActionResult OnPostCancel()
+        {
             return RedirectToPage("DisplayPizza");
         }
-        
+
 
     }
 }

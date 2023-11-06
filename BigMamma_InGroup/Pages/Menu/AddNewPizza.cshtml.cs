@@ -13,7 +13,7 @@ namespace BigMamma_InGroup.Pages.Menu
         public int NewPrice { get; set; }
 
         private IPizzaRepository _pr;
-        private PizzaRepositoryJson _js; 
+
 
         public AddNewPizzaModel(IPizzaRepository pr)
         {
@@ -22,7 +22,7 @@ namespace BigMamma_InGroup.Pages.Menu
 
         public void OnGet()
         {
-     
+
         }
 
         public IActionResult OnPost()
