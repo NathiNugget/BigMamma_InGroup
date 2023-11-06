@@ -29,10 +29,11 @@
             <td>@Html.Raw((d.ContainsAlcohol) ? "✅" : "❌")</td>
             <td>@Html.Raw((d.IsVegan) ? "✅" : "❌")</td>
             <td>@Html.Raw((d.ContainsSugar) ? "✅" : "❌")</td>
-            <td><a asp-page="Editdrink" asp-route-name="@d.Name">Edit Drink</a></td>
-            <td><a asp-page="Deletedrink" asp-route-name="@d.Name">Delete Drink</a></td>
+            <td><a asp-page="EditDrinks" asp-route-name="@d.Name">Edit Drink</a></td>
+            <td><a asp-page="DeleteDrinks" asp-route-name="@d.Name">Delete Drink</a></td>
                    
-                    
+            
+            
                     
 
                                 
