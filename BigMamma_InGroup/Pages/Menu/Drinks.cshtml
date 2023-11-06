@@ -1,4 +1,45 @@
 ﻿@page
+@using BigMamma_InGroup.model
 @model BigMamma_InGroup.Pages.Menu.DrinksModel
 @{
 }
+<h1 class=""> Vis alle drinks </h1>
+
+<table class="table-hover" onload="print()">
+    <thead>
+    <tr>
+        <th>Number/ID </th>
+        <th> Name </th>
+        <th> Price </th>
+        <th> Alcoholic </th>
+        <th> Vegan </th>
+        <th> Sugar </th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+                        
+    @foreach (Drink d in Model.DrinkList)
+    {           
+        <tr>
+            <td>@{int i = 1 + @Model.DrinkList.IndexOf(d);}@i</td>
+            <td>@d.Name</td>
+            <td>@d.Price </td>
+            <td>@Html.Raw((d.ContainsAlcohol) ? "✅" : "❌")</td>
+            <td>@Html.Raw((d.IsVegan) ? "✅" : "❌")</td>
+            <td>@Html.Raw((d.ContainsSugar) ? "✅" : "❌")</td>
+            <td><a asp-page="Editdrink" asp-route-name="@d.Name">Edit Drink</a></td>
+            <td><a asp-page="Deletedrink" asp-route-name="@d.Name">Delete Drink</a></td>
+                   
+                    
+                    
+
+                                
+        </tr>
+
+    }
+    </tbody>
+
+</table>
+    
