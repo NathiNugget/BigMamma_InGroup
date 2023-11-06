@@ -12,7 +12,8 @@ namespace BigMamma_InGroup.Pages.Menu
         [BindProperty]
         public int NewPrice { get; set; }
 
-        private IPizzaRepository _pr; 
+        private IPizzaRepository _pr;
+        private PizzaRepositoryJson _js; 
 
         public AddNewPizzaModel(IPizzaRepository pr)
         {
@@ -27,7 +28,7 @@ namespace BigMamma_InGroup.Pages.Menu
         public IActionResult OnPost()
         {
             Pizza p = new Pizza(NewName, NewPrice, false, false, false);
-            _pr.PizzaList.Add(p);
+            _pr.AddPizza(p);
             return RedirectToPage("DisplayPizza");
 
         }

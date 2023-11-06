@@ -57,6 +57,16 @@ namespace BigMamma_InGroup.services
             return -1;
         }
 
+        public void AddPizza(Pizza pizza)
+        {
+            _pizzaList.Add(pizza);
+        }
+
+        public void DeletePizza(Pizza pizza)
+        {
+            _pizzaList.Remove(pizza);
+        }
+
 
 
 

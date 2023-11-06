@@ -29,7 +29,7 @@ namespace BigMamma_InGroup.Pages.Menu
 
         public IActionResult OnPostDelete()
         {
-            _pr.PizzaList.Remove(_pr.PizzaList[index]);
+            _pr.DeletePizza(_pr.PizzaList[index]);
             return RedirectToPage("DisplayPizza");
         }
 

@@ -8,5 +8,8 @@ namespace BigMamma_InGroup.services
 
         Pizza GetByName(string name);
         int GetIndex(string name);
+
+        void AddPizza(Pizza pizza);
+        void DeletePizza(Pizza pizza);
     }
 }
