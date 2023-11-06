@@ -1,19 +1,18 @@
-﻿@page
-@model BigMamma_InGroup.Pages.Menu.EditPizzaModel
+@page
+@model BigMamma_InGroup.Pages.Menu.EditDrinksModel
 @{
 }
-
-<h1> Edit pizza </h1>
+<h1> Edit Drinks </h1>
 
 <form method="post">
     <div class="form-group">
-        <label>Pizza Name</label><br />
+        <label>Drink name</label><br />
         <input class="form-control" asp-for="@Model.NewName" /><br />
-        <label>Pizza Price</label><br />
+        <label>Drink Price</label><br />
         <input class="form-control" asp-for="@Model.NewPrice" /><br />
         <span asp-validation-for="@Model.NewPrice" class="text-danger"></span>
         <br />
 
-        <input type="submit" value="Change Pizza" class="btn btn-outline-success"/>
+        <input type="submit" value="Change Drink" class="btn btn-outline-success"/>
     </div>
 </form>
