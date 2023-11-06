@@ -1,0 +1,15 @@
+﻿@page
+@model BigMamma_InGroup.Pages.Menu.DeletePizzaModel
+@{
+    <form method="post">
+        <div class="form-group">
+            <label>Pizza Name: @Model.ToDeleteName</label><br />
+            <label>Pizza Price: @Model.ToDeletePrice</label><br />
+
+
+            <input type="submit" value="Cancel" asp-page-handler="Cancel"  class="btn btn-warning"/>
+            <input type="submit" value="Delete Pizza" asp-page-handler="Delete" class="btn btn-danger"/>
+
+        </div>
+    </form>
+}

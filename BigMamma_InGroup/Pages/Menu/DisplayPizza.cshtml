@@ -42,6 +42,7 @@
                     <td>@Html.Raw((p.isDeeppan) ? "✅" : "❌")</td>
                     <td>@Html.Raw((p.isClassic) ? "✅" : "❌")</td>
                     <td><a asp-page="EditPizza" asp-route-name="@p.Name">Edit Pizza</a></td>
+                    <td><a asp-page="DeletePizza" asp-route-name="@p.Name">Delete Pizza</a></td>
                    
                     
                     
