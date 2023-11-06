@@ -12,9 +12,9 @@ namespace BigMamma_InGroup.Pages.Menu
         [BindProperty] 
         public int ToDeletePrice { get; set; }
 
-        private PizzaRepository _pr;
+        private IPizzaRepository _pr;
 
-        public DeletePizzaModel(PizzaRepository pr)
+        public DeletePizzaModel(IPizzaRepository pr)
         {
             _pr = pr;
         }

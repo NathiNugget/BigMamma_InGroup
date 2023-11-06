@@ -2,13 +2,13 @@
 
 namespace BigMamma_InGroup.services
 {
-    public class PizzaRepository
+    public class PizzaRepository : IPizzaRepository
     {
 
         private List<Pizza> _pizzaList;
 
 
-        public PizzaRepository(bool test) 
+        public PizzaRepository(bool test)
         {
             if (test)
             {
@@ -35,23 +35,23 @@ namespace BigMamma_InGroup.services
                     return p;
                 }
             }
-            return new Pizza("", 0, false, false, false); 
+            return new Pizza("", 0, false, false, false);
         }
 
-        public List<Pizza> PizzaList 
-        { 
-            get {  return _pizzaList; }
+        public List<Pizza> PizzaList
+        {
+            get { return _pizzaList; }
             set { _pizzaList = value; }
-            
+
         }
 
         public int GetIndex(string name)
         {
             for (int i = 0; i < PizzaList.Count; i++)
             {
-                if (PizzaList[i].Name == name )
+                if (PizzaList[i].Name == name)
                 {
-                    return i; 
+                    return i;
                 }
             }
             return -1;

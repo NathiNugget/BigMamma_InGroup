@@ -12,9 +12,9 @@ namespace BigMamma_InGroup.Pages.Menu
         [BindProperty]
         public int NewPrice { get; set; }
 
-        private PizzaRepository _pr; 
+        private IPizzaRepository _pr; 
 
-        public AddNewPizzaModel(PizzaRepository pr)
+        public AddNewPizzaModel(IPizzaRepository pr)
         {
             _pr = pr;
         }

@@ -9,10 +9,10 @@ namespace BigMamma_InGroup.Pages.Menu
     {
 
         // Instance of PizzaRepository
-        PizzaRepository _pr; 
+        IPizzaRepository _pr; 
 
         //DI
-        public DisplayPizzaModel(PizzaRepository pr)
+        public DisplayPizzaModel(IPizzaRepository pr)
         {
             _pr = pr;
         }

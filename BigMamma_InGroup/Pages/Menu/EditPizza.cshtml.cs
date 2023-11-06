@@ -8,8 +8,8 @@ namespace BigMamma_InGroup.Pages.Menu
 {
     public class EditPizzaModel : PageModel
     {
-        private PizzaRepository _pr;
-        public EditPizzaModel(PizzaRepository pr) {
+        private IPizzaRepository _pr;
+        public EditPizzaModel(IPizzaRepository pr) {
             _pr = pr;
         }
      
