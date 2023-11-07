@@ -1,3 +1,4 @@
+using BigMamma_InGroup.model;
 using BigMamma_InGroup.services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IPizzaRepository>(new PizzaRepositoryJson());
+builder.Services.AddSingleton<SandwichRepository>(new SandwichRepository(true));
 builder.Services.AddSingleton<DrinkRepository>(new DrinkRepository(true));
 builder.Services.AddSingleton<UserRepository>(new UserRepository());
 
