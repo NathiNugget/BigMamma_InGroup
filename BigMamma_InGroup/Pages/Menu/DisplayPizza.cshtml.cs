@@ -17,9 +17,17 @@ namespace BigMamma_InGroup.Pages.Menu
         }
 
         public List<Pizza> PizzaList { get; set; }
+        public List<Pizza> SortedList { get; set; }
         public void OnGet()
         {
             PizzaList = _pr.PizzaList;
+        }
+
+
+        public void OnGetSorted()
+        {
+            PizzaList = _pr.PizzaList;
+            SortedList = PizzaList.OrderBy(x => x.Price).ToList();
         }
     }
 }
