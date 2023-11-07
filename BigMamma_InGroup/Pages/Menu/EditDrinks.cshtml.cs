@@ -14,7 +14,7 @@ public class EditDrinksModel : PageModel
         _dr = dr;
     }
 
-    private Drink _piz;
+    private Drink _drink;
     private static int id = 0;
 
     [BindProperty]
@@ -29,10 +29,10 @@ public class EditDrinksModel : PageModel
 
     public void OnGet(string name)
     {
-        _piz = _dr.GetByName(name);
+        _drink = _dr.GetByName(name);
         id = _dr.GetIndex(name);
-        NewName = _piz.Name;
-        NewPrice = _piz.Price;
+        NewName = _drink.Name;
+        NewPrice = _drink.Price;
     }
 
     public IActionResult OnPost()
@@ -49,4 +49,5 @@ public class EditDrinksModel : PageModel
 
 
 }
+
 

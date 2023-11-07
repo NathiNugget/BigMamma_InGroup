@@ -1,0 +1,43 @@
+@page
+@using BigMamma_InGroup.model
+@model BigMamma_InGroup.Pages.Menu.SandwichModel
+@{
+    <h1 class=""> Vis alle sandwich </h1>
+
+    <table class="table-hover" onload="print()">
+        <thead>
+        <tr>
+            <th>Number/ID </th>
+            <th> Name </th>
+            <th> Price </th>
+            <th> Vegan </th>
+       
+
+
+        </tr>
+        </thead>
+        <tbody>
+                        
+        @foreach (Sandwich s in Model.SandwichList)
+        {           
+            <tr>
+                <td>@{int i = 1 + @Model.SandwichList.IndexOf(s);}@i</td>
+                <td>@s.Name</td>
+                <td>@s.Price </td>
+                <td>@Html.Raw((s.IsVegan) ? "✅" : "❌")</td>
+                <td><a asp-page="EditSandwich" asp-route-name="@s.Name">Edit Sandwich</a></td>
+                <td><a asp-page="DeleteSandwich" asp-route-name="@s.Name">Delete Sandwich</a></td>
+                   
+                    
+                    
+
+                                
+            </tr>
+
+        }
+        </tbody>
+
+    </table>
+}
+
+    

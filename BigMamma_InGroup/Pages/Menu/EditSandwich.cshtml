@@ -1,0 +1,18 @@
+@page
+@model BigMamma_InGroup.Pages.Menu.EditSandwichModel
+@{
+}
+<h1> Edit Sandwich </h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>Sandwich name</label><br />
+        <input class="form-control" asp-for="@Model.NewName" /><br />
+        <label>Sandwich Price</label><br />
+        <input class="form-control" asp-for="@Model.NewPrice" /><br />
+        <span asp-validation-for="@Model.NewPrice" class="text-danger"></span>
+        <br />
+
+        <input type="submit" value="Change Sandwich" class="btn btn-outline-success"/>
+    </div>
+</form>
