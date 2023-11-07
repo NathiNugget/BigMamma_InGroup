@@ -2,62 +2,57 @@ using BigMamma_InGroup.model;
 using BigMamma_InGroup.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Security.Cryptography.X509Certificates;
 
 namespace BigMamma_InGroup.Pages.Menu
 {
     public class BasketModel : PageModel
     {
-        private List<Pizza> _basketList;
-        private double _cost;
-                UserRepository _userRepository;
-
-        public BasketModel(IPizzaRepository pr, UserRepository ur) {
-            _userRepository = ur;
-
+        List<Pizza> _pizzaList;
+        UserRepository _ur;
+        private int _cost = 0; 
+        public BasketModel(UserRepository ur, IPizzaRepository pr) {
+            _ur = ur;
+            _pizzaList = new List<Pizza>(); 
+            foreach (Pizza p in UserRepository.Basket)
+            {
+                _pizzaList.Add(p);
+            }
+            foreach (Pizza p in _pizzaList)
+            {
+                
+                _cost += p.Price; 
+            }
         }
-        [BindProperty]
-        public List<Pizza> BasketList { get; set; }
-        [BindProperty]
-        public List<Pizza> PizzaList { get; set; }
-        [BindProperty]
-        public UserRepository UserRepository { get { return _userRepository;} }
+
+        
+        public List<Pizza> PizzaList { get { return _pizzaList; }}
+        [BindProperty(SupportsGet = true)]
+        public int Cost { get { return _cost; } set { _cost = value; }}
+        [TempData]
+        public string StatusMessage { get; set; }
+
+
         public void OnGet()
         {
-            _basketList = new List<Pizza>();
-            _basketList.Add(new Pizza("hej", 54, false, false, false));
-            _basketList.Add(new Pizza("noob", 66, false, false, false));
-            _basketList.Add(new Pizza("nope", 88, false, false, false));
-            _cost = 0;
-            foreach (Pizza p in _basketList)
-            {
-                if (UserRepository.LoggedIn)
-                {
-                    _cost += p.Price * 0.95;
-                }
-                else
-                {
-                    _cost += p.Price;
-                }
-            }
+            
         }
 
-        public IActionResult OnPostOrder() {
-            if (UserRepository.Balance >= _cost) {
-                UserRepository.Balance -= _cost;
+        public IActionResult OnPostOrder()
+        {
+            if (Cost <= UserRepository.Balance)
+            {
+                UserRepository.Balance -= Cost;
                 return RedirectToPage("SeeYouNextTime");
             }
-            
-            else return RedirectToPage("/"); 
-        }
-
-        public IActionResult OnPostCancel()
-        {
-            BasketList.Clear();
-
-            return RedirectToPage("/");
+            StatusMessage = $"You don't have enough monkey on your account. \nThe cost is: {Cost} and your balance after purchase would be {UserRepository.Balance - Cost}."; 
+            return Page(); 
             
         }
 
+        public IActionResult OnPostCancel() {
+            UserRepository.Basket.Clear();
+            Cost = 0;
+            return RedirectToPage("/Index"); 
+        }
     }
 }

@@ -10,9 +10,12 @@
             <form method="get">
             <input type="submit" value="Logout here" asp-page="../Login/Logout">
             </form>
-        <h1 class=""> Show all pizzas <h4 style="float: right; font-family: 'Comic Sans MS'">                                           Logged in as @{
-                string usr = UserRepository.CurrentUser;
-            }@usr</h4><br /></h1> 
+        <h1 class=""> Show all pizzas <br /></h1>
+        <h4 style="float: right; font-family: 'Comic Sans MS'">
+            Logged in as @{
+                string usr = UserRepository.CurrentUser ?? "Not logged in";
+            }@usr
+        </h4>
         <script>
 
 

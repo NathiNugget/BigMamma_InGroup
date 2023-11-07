@@ -34,6 +34,7 @@ namespace BigMamma_InGroup.Pages.Login
                     UserRepository.LoggedIn = true;
                     UserRepository.CurrentUser = Username;
                     UserRepository.Balance = 500.0; 
+                    UserRepository.Basket.Clear();
                     return RedirectToPage("../Menu/DisplayPizza");
                 }
             }
