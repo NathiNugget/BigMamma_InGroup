@@ -49,8 +49,18 @@ namespace BigMamma_InGroup.services
             }
 
             return -1;
+            
+         
+        }public void AddSandwich(Sandwich Sandwich)
+        {
+            _sandwichList.Add(Sandwich);
+        }
 
+        public void DeleteSandwich(Sandwich Sandwich)
+        {
+            _sandwichList.Remove(Sandwich);
         }
     }
+    
 }
         

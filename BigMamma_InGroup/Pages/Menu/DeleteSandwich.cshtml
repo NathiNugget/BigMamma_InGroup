@@ -1,0 +1,17 @@
+@page
+@model BigMamma_InGroup.Pages.Menu.DeleteSandwich
+@{
+}
+<form method="post">
+        <div class="form-group">
+            <label>Sandwich Name: @Model.ToDeleteName</label><br />
+            <label>Sandwich Price: @Model.ToDeletePrice</label><br />
+
+
+            <input type="submit" value="Cancel" asp-page-handler="Cancel"  class="btn btn-warning"/>
+            <input type="submit" value="Delete Sandwich" asp-page-handler="Delete" class="btn btn-danger"/>
+
+        </div>
+    </form>
+}
+
