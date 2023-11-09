@@ -8,9 +8,11 @@
 <form method="post">
     <div class="form-group">
         <label>Pizza Name</label><br />
-        <input class="form-control" asp-for="@Model.NewName" /><br />
+        <input class="form-control" asp-for="@Model.NewName" />
+        <span asp-validation-for="@Model.NewName" class="text-danger"></span><br />
         <label>Pizza Price</label><br />
-        <input class="form-control" asp-for="@Model.NewPrice" /><br />
+        <input class="form-control" asp-for="@Model.NewPrice" />
+        <span asp-validation-for="@Model.NewPrice" class="text-danger"></span>
         <br />
 
         <input type="submit" value="Add new Pizza" />

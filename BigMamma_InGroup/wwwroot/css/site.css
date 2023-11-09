@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+@font-face {
+    font-family: 'Kapizza';
+    src: url('Kapizza-r8w7.ttf') format('truetype');
+}

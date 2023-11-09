@@ -21,7 +21,7 @@ namespace BigMamma_InGroup.Pages.Menu
         public string NewName { get; set; }
         [BindProperty]
         [Required(ErrorMessage = "You have to put in a price!!!")]
-        [Range(10, 1000, ErrorMessage = "You have to put in a pricebetween 10 and 1000")]
+        [Range(10, 1000, ErrorMessage = "You have to put in a price between 10 and 1000")]
 
         public int NewPrice { get; set; }
 

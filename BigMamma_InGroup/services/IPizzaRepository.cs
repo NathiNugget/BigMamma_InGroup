@@ -4,6 +4,7 @@ namespace BigMamma_InGroup.services
 {
     public interface IPizzaRepository
     {
+
         List<Pizza> PizzaList { get; set; }
 
         Pizza GetByName(string name);

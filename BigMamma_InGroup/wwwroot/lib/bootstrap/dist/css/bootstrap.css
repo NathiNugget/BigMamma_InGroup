@@ -3918,6 +3918,7 @@ textarea.form-control-lg {
   color: #495057;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
+  font-family: 'Comic Sans MS';
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -3929,6 +3930,7 @@ textarea.form-control-lg {
   background: none;
   border: 0;
   border-radius: 0.25rem;
+  font-family: 'Comic Sans MS';
 }
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
@@ -3940,6 +3942,7 @@ textarea.form-control-lg {
 .nav-fill .nav-item {
   flex: 1 1 auto;
   text-align: center;
+  font-family: 'Comic Sans MS';
 }
 
 .nav-justified > .nav-link,
@@ -3947,11 +3950,13 @@ textarea.form-control-lg {
   flex-basis: 0;
   flex-grow: 1;
   text-align: center;
+  font-family: 'Comic Sans MS';
 }
 
 .nav-fill .nav-item .nav-link,
 .nav-justified .nav-item .nav-link {
   width: 100%;
+  font-family: 'Comic Sans MS';
 }
 
 .tab-content > .tab-pane {
@@ -7675,6 +7680,7 @@ textarea.form-control-lg {
 .text-danger {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
+  font-family: 'Comic Sans MS';
 }
 
 .text-light {
@@ -7685,6 +7691,7 @@ textarea.form-control-lg {
 .text-dark {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+  font-family: 'Comic Sans MS'; 
 }
 
 .text-black {

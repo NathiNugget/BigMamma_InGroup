@@ -10,6 +10,16 @@
             <form method="get">
             <input type="submit" value="Logout here" asp-page="../Login/Logout">
             </form>
+            <form method="get">
+                <input type="submit" value="Add new pizza here" asp-page="AddNewPizza">
+            </form>
+        <form method="post">
+            <input type="submit" value="Sort after price" asp-page="DisplayPizza">
+        </form>
+        <form method="post">
+            <input class="form-control" asp-for="Search" />
+            <input type="submit" value="Search" asp-page="DisplayPizza" asp-page-handler="Search">
+        </form>
         <h1 class=""> Show all pizzas <br /></h1>
         <h4 style="float: right; font-family: 'Comic Sans MS'">
             Logged in as @{
@@ -45,9 +55,19 @@
 
                     @foreach (Pizza p in Model.PizzaList)
                     {
-                        <tr>
-                            <td>@{
-                                    int i = 1 + @Model.PizzaList.IndexOf(p);
+                    <tr>
+                        <td>@{
+                                int i;
+                                if (UserRepository.IsSorted)
+                                {
+                                    i = 1 + @Model.OrigList.IndexOf(p);
+
+                                }
+                                else
+                                {
+                                    i = 1 + @Model.PizzaList.IndexOf(p);
+                                }
+
                                 }@i</td>
                             <td>@p.Name</td>
                         <td>@{

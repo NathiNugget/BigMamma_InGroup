@@ -8,6 +8,7 @@ namespace BigMamma_InGroup.services
         private List<Pizza> _pizzaList;
 
         public List<Pizza> PizzaList { get { return _pizzaList; } set { _pizzaList = value; } }
+        public static bool Sorted = false;
 
         #region Constructor
         public PizzaRepositoryJson()
@@ -21,10 +22,13 @@ namespace BigMamma_InGroup.services
             if (File.Exists(FILENAME))
             {
 
-                using (StreamReader streamReader = File.OpenText(FILENAME))
+                using (StreamReader Reader = File.OpenText(FILENAME))
                 {
-                    return JsonSerializer.Deserialize<List<Pizza>>(streamReader.ReadToEnd());
+                    return JsonSerializer.Deserialize<List<Pizza>>(Reader.ReadToEnd());
+                    Reader.Close();
+                    Reader.Dispose();
                 }
+                
 
 
             }

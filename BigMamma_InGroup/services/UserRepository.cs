@@ -5,6 +5,7 @@ namespace BigMamma_InGroup.services
     public class UserRepository
     {
         public static List<Pizza> Basket {  get; set; }
+        public static bool IsSorted { get; set; } = false; 
         public static double Balance { get; set; }
         public Dictionary<string, string> dict = new Dictionary<string, string>();
         public static string? CurrentUser { get; set; }
