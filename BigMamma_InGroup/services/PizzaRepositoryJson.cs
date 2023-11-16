@@ -14,6 +14,7 @@ namespace BigMamma_InGroup.services
         public PizzaRepositoryJson()
         {
             _pizzaList = ReadFromJson();
+            _pizzaList.Add(new Pizza("Meat Lovers", 95, false, true, true));
         }
 
         private const string FILENAME = "PizzaRepository.json";
@@ -25,8 +26,7 @@ namespace BigMamma_InGroup.services
                 using (StreamReader Reader = File.OpenText(FILENAME))
                 {
                     return JsonSerializer.Deserialize<List<Pizza>>(Reader.ReadToEnd());
-                    Reader.Close();
-                    Reader.Dispose();
+                   
                 }
                 
 

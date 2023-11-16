@@ -49,9 +49,26 @@ namespace BigMamma_InGroup.Pages.Menu
             PizzaList = new List<Pizza>(); 
             foreach (Pizza p in OrigList)
             {
-                if (p.Name.ToUpper().Contains(search.ToUpper() ?? ""))
+                if (search == null)
                 {
                     PizzaList.Add(p);
+                }
+                else
+                {
+                    if (p.Name.ToUpper().Contains(search.ToUpper() ?? ""))
+                    {
+                        PizzaList.Add(p);
+                    }
+                    else 
+                    {
+                        if (int.TryParse(search, out int num))
+                        {
+                            if (p.Price ==  num) {
+                                PizzaList.Add(p);
+                            }
+                            
+                        }
+                    }
                 }
             }
             return Page(); 

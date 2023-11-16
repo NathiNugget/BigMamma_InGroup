@@ -38,7 +38,7 @@
             <audio id="myAudio">
                 <source src="https://nathinugget.net/greetings.mp3">
             </audio>
-            <table class="table-hover" onclick="print()">
+            <table onclick="print()" style="border: 1px solid black; border-collapse: collapse;">
                 <thead>
                     <tr>
                         <th>Number/ID </th>
@@ -55,7 +55,7 @@
 
                     @foreach (Pizza p in Model.PizzaList)
                     {
-                    <tr>
+                    <tr style="background: linear-gradient(to right, green 3%, white 25%, white 50%, pink 75%, #fa4848 95%);">
                         <td>@{
                                 int i;
                                 if (UserRepository.IsSorted)
@@ -114,7 +114,7 @@
             <audio id="myAudio">
                 <source src="https://nathinugget.net/greetings.mp3">
             </audio>
-            <table class="table-hover" onload="print()">
+            <table class="table-success" onload="print()">
                 <thead>
                     <tr>
                         <th>Number/ID </th>
